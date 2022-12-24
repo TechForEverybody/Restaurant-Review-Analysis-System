@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Restaurant_Review_Sentiment_Analysis_System</title>
+		<link rel="stylesheet" href="../static/styles/Home.css" />
+		<link rel="stylesheet" href="../static/styles/Main.css" />
+		<link rel="stylesheet" href="{{url_for('static',filename='styles/Main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/Home.css')}}">
+    <script src="{{url_for('static',filename='scripts/index.js')}}"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Restaurant Review Sentiment Analysis System</h1>
+			<nav>
+				<a href="#about">About</a><a href="#analysis">Analysis</a>
+			</nav>
+		</header>
+		<hr />
+		<section>
+			<div class="outputSection">
+				<div id="positiveResult">
+					<div class="emoji">
+						<img
+							src="https://freepngimg.com/thumb/emoji/102738-gradient-great-job-emoji-download-hd.png"
+							alt=""
+						/>
+						<h2 style="color: green">Good</h2>
+						<h3>It Looks Positive Review About Restaurant</h3>
+					</div>
+				</div>
+				<div id="nagativeResult">
+					<div class="emoji">
+						<img
+							src="https://i.pinimg.com/736x/6b/54/80/6b5480d1cff712451cdd39b275e5cbbc.jpg"
+							alt=""
+						/>
+					</div>
+					<h2 style="color: red">Bad</h2>
+					<h3>It Looks Nagative Review About Restaurant</h3>
+				</div>
+				<div id="neutralResult">
+					<div class="emoji">
+						<img
+							src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/neutral-face.png"
+							alt=""
+						/>
+					</div>
+					<h2 style="color: red">Neutral</h2>
+					<h3>It is not as per the sentiment </h3>
+					<h3>(हम पता नहीं कर पाए की आप क्या कहना चाहते हैं)</h3>
+				</div>
+				<div id="default">
+                    <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210722215846/sentiment-analysis.jpg" alt="">
+                    <h2 style="color: gray">Positive or Negative</h2>
+					<h3>Based on the input, we will try to predict the sentiment behind the Review as Positive or Nagative</h3>
+                </div>
+			</div>
+			<form onsubmit="getResult(event)">
+				<h2><i class="far fa-comment-alt"></i> Enter Your Sentiment</h2>
+				<textarea
+					name="input"
+					id="input"
+					placeholder="Enter Review.........." required
+				></textarea>
+				<button type="submit">Check Sentiment</button>
+			</form>
+		</section>
+	</body>
+</html>
